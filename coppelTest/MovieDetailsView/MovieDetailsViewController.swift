@@ -74,6 +74,18 @@ class MovieDetailsViewController: UIViewController {
         return imageView
     }()
     
+    private let companiesCollection : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 10
+        layout.minimumInteritemSpacing = 20
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(CompanyCell.self, forCellWithReuseIdentifier: CompanyCell.identifier)
+        cv.backgroundColor = UIColor(hexString: "#0C151A")
+        return cv
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(hexString: "#0C151A")
@@ -88,6 +100,8 @@ class MovieDetailsViewController: UIViewController {
             }
         }
         setupBinders()
+        companiesCollection.delegate = self
+        companiesCollection.dataSource = self
     }
     
     private func setupBinders() {
@@ -104,6 +118,7 @@ class MovieDetailsViewController: UIViewController {
                 self?.rating.text = "TMDB \(rate)"
             }
             self?.ageImage.image = UIImage(named: movie.adult ? "age-limit" : "age-limit")?.withTintColor(.lightGray)
+            self?.companiesCollection.reloadData()
         }.store(in: &cancellables)
     }
     
@@ -115,6 +130,7 @@ class MovieDetailsViewController: UIViewController {
         view.addSubview(releaseDate)
         view.addSubview(rating)
         view.addSubview(ageImage)
+        view.addSubview(companiesCollection)
     }
     
     func setupConstraints() {
@@ -145,6 +161,11 @@ class MovieDetailsViewController: UIViewController {
         ageImage.centerYAnchor.constraint(equalTo: rating.centerYAnchor).isActive = true
         ageImage.heightAnchor.constraint(equalToConstant: 20).isActive = true
         ageImage.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        
+        companiesCollection.topAnchor.constraint(equalTo: ageImage.bottomAnchor).isActive = true
+        companiesCollection.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -40).isActive = true
+        companiesCollection.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        companiesCollection.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
     @objc func dismissView() {
@@ -163,5 +184,37 @@ class MovieDetailsViewController: UIViewController {
     func minutesToHoursAndMinutes(_ minutes: Int) -> (hours: Int , leftMinutes: Int) {
         return (minutes / 60, (minutes % 60))
     }
+    
+}
+
+extension MovieDetailsViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movie.productionCompanies?.count ?? 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CompanyCell.identifier, for: indexPath) as! CompanyCell
+        cell.nameLabel.text = movie.productionCompanies?[indexPath.row].name ?? ""
+        Task {
+            if let imgData = await viewModel.getCompanyImage(movie.productionCompanies?[indexPath.row].logo_path ?? "") {
+                cell.companyImage.image = UIImage(data: imgData)                
+            }
+        }
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1.0, left: 8.0, bottom: 1.0, right: 8.0)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        
+        let widthPerItem = collectionView.frame.width / 2 - layout.minimumInteritemSpacing
+        
+        let heightPreItem = collectionView.frame.height - layout.minimumInteritemSpacing
+        return CGSize(width: widthPerItem - 12, height: heightPreItem - 60)
+    }
+    
     
 }

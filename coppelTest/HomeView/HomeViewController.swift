@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
         layout.minimumInteritemSpacing = 4
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(MoviesCell.self, forCellWithReuseIdentifier: "cell")
+        cv.register(MoviesCell.self, forCellWithReuseIdentifier: MoviesCell.identifier)
         cv.backgroundColor = UIColor.black
         return cv
     }()
@@ -179,7 +179,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MoviesCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MoviesCell.identifier, for: indexPath) as! MoviesCell
         cell.titleLabel.text = movies[indexPath.row].title
         cell.ratingLabel.text = String(describing: movies[indexPath.row].rating!)
         let dateFormatter = DateFormatter()

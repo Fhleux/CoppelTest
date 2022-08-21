@@ -10,6 +10,8 @@ import UIKit
 
 class MoviesCell: UICollectionViewCell {
     
+    static let identifier = String(describing: MoviesCell.self)
+    
     let movieImage: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "moviePlaceholder")

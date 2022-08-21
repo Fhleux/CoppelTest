@@ -23,4 +23,15 @@ final class MovieDetailsViewModel {
             print(parseError.localizedDescription)
         }
     }
+    
+    func getCompanyImage(_ urlPath: String) async -> Data? {
+        do {
+            guard let companyImgData = try await NetworkManager.sharedInstance.downloadImage(urlPath) else { return nil }
+            return companyImgData
+        }
+        catch let parseError {
+            print(parseError.localizedDescription)
+        }
+        return nil
+    }
 }

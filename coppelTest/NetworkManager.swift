@@ -296,8 +296,6 @@ class NetworkManager {
                 if let response = response as? HTTPURLResponse, response.statusCode == 200 {
                     responseJson = try JSONSerialization.jsonObject(with: data, options: []) as? JSONDictionary
                     
-
-                    
                     if let title = responseJson!["title"] as? String,
                        let description = responseJson!["overview"] as? String,
                        let rating = responseJson!["vote_average"] as? Double,
@@ -318,6 +316,19 @@ class NetworkManager {
                         if let poster = responseJson!["poster_path"] as? String {
                             movieDet.imgdata = try? await downloadImage(poster)
                         }
+                    }
+                    
+                    if let companies = responseJson!["production_companies"] as? Array<JSONDictionary> {
+                        var movieCompanies = [ProductionCompany]()
+                        for company in companies {
+                            if let name = company["name"] as? String,
+                                let id = company["id"] as? Int,
+                                let logo_path = company["logo_path"] as? String{
+                                    let newCompany = ProductionCompany(id: id, logo_path: logo_path, name: name)
+                                movieCompanies.append(newCompany)
+                            }
+                        }
+                        movieDet.productionCompanies = movieCompanies
                     }
                 } 
                 

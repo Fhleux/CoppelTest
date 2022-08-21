@@ -28,6 +28,7 @@
 		9DF6112828B17EF4002B9F53 /* NavigationBarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6112728B17EF4002B9F53 /* NavigationBarExtensions.swift */; };
 		9DF6112B28B18701002B9F53 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6112A28B18701002B9F53 /* MovieDetailsViewController.swift */; };
 		9DF6112D28B1A0B8002B9F53 /* MovieDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6112C28B1A0B8002B9F53 /* MovieDetailsViewModel.swift */; };
+		9DF6112F28B1DF8C002B9F53 /* CompanyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF6112E28B1DF8B002B9F53 /* CompanyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		9DF6112728B17EF4002B9F53 /* NavigationBarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarExtensions.swift; sourceTree = "<group>"; };
 		9DF6112A28B18701002B9F53 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		9DF6112C28B1A0B8002B9F53 /* MovieDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModel.swift; sourceTree = "<group>"; };
+		9DF6112E28B1DF8B002B9F53 /* CompanyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				9DF6112A28B18701002B9F53 /* MovieDetailsViewController.swift */,
 				9DF6112C28B1A0B8002B9F53 /* MovieDetailsViewModel.swift */,
+				9DF6112E28B1DF8B002B9F53 /* CompanyCell.swift */,
 			);
 			path = MovieDetailsView;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				9DF6111B28AF254D002B9F53 /* MoviesCell.swift in Sources */,
 				9DF6110928ADFDBF002B9F53 /* LoginViewModel.swift in Sources */,
 				9DF610F328ADF741002B9F53 /* SceneDelegate.swift in Sources */,
+				9DF6112F28B1DF8C002B9F53 /* CompanyCell.swift in Sources */,
 				9DF6110C28AE8484002B9F53 /* HomeViewController.swift in Sources */,
 				9DF6112428B05210002B9F53 /* ProfileViewController.swift in Sources */,
 				9DF6111528AEF5A6002B9F53 /* LocalSettings.swift in Sources */,

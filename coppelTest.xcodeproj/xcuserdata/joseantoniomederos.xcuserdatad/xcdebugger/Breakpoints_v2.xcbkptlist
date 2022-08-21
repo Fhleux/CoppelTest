@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9EDB1785-D6CE-4662-B57B-AE1D248DFA4A"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E4D4FF2-253A-4FDD-B2ED-AA8A59ED1ADA"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coppelTest/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "getProfile()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "07193FF3-4340-44DA-97B8-EF44CA72E66A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coppelTest/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
+            landmarkName = "createSession()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "coppelTest/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "getProfile()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E - bb72c1f96159c228"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "coppelTest.NetworkManager.getProfile() async throws -&gt; Swift.Optional&lt;coppelTest.User&gt;"
+                  moduleName = "coppelTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseantoniomederos/Documents/Coppel/coppelTest/coppelTest/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "2350">
+               </Location>
+               <Location
+                  uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E - a857fc1cb855f3bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for coppelTest.NetworkManager.getProfile() async throws -&gt; Swift.Optional&lt;coppelTest.User&gt;"
+                  moduleName = "coppelTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseantoniomederos/Documents/Coppel/coppelTest/coppelTest/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "1199">
+               </Location>
+               <Location
+                  uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E - 792d482eff4951be"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for coppelTest.NetworkManager.getProfile() async throws -&gt; Swift.Optional&lt;coppelTest.User&gt;"
+                  moduleName = "coppelTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseantoniomederos/Documents/Coppel/coppelTest/coppelTest/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "848">
+               </Location>
+               <Location
+                  uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E - a208438227c37bd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) await resume partial function for coppelTest.NetworkManager.getProfile() async throws -&gt; Swift.Optional&lt;coppelTest.User&gt;"
+                  moduleName = "coppelTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseantoniomederos/Documents/Coppel/coppelTest/coppelTest/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "9772">
+               </Location>
+               <Location
+                  uuid = "6216B9CA-BFA5-4701-8F42-C9D510C1923E - db36d04a611395bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) await resume partial function for coppelTest.NetworkManager.getProfile() async throws -&gt; Swift.Optional&lt;coppelTest.User&gt;"
+                  moduleName = "coppelTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/joseantoniomederos/Documents/Coppel/coppelTest/coppelTest/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "272"
+                  endingLineNumber = "272"
+                  offsetFromSymbolStart = "1338">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
